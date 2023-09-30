@@ -21,12 +21,13 @@ const NavBar: React.FC = () => {
 
 const Styles = {
   nav: {
+    width: '100%',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '1rem 2rem',
     backgroundColor: '#333',
-    color: '#fff'
+    color: '#fff', 
+    zIndex: 9999
   },
   ul: {
     display: 'flex',
