@@ -88,7 +88,7 @@ const Degrees = [
 let Bio = {
   text: `
   My name is ${Victor.name}, I'm ${Victor.age} years old and I live in ${Victor.location}.
-  I'm currently studying ${Victor.currentOccupation} at Krsitiania University College.
+  I'm currently studying frontend development at Kristiania University College.
   I have a passion for technology and media, and I love to create things.
   In my spare time I like to meet up with people, play video games, and create new software solutions.
   `,
@@ -105,7 +105,7 @@ const About: React.FC = () => {
 
         <section style={{ display: "flex", flex: 2, justifyContent: "center" }}>
           <img
-            style={{ width: "70%", objectFit: "cover", borderRadius: 400 }}
+            style={{ width: "70%", objectFit: "cover", borderRadius: 400, padding: 20 }}
             src={Victor.profileImg}
             alt=""
           />
