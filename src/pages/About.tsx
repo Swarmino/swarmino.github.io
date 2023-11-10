@@ -9,15 +9,16 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Colors from "../Styles/StyleSheet";
+import VideoPlayer from "../components/VideoPlayer";
 
 // data
 let Victor = {
   name: "Victor Falck-Næss",
   profileImg:
-    "https://scontent.fosl3-1.fna.fbcdn.net/v/t39.30808-6/364799417_2989421171193638_6815297408984585136_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=rLvZWL_njE8AX8Q8XP3&_nc_ht=scontent.fosl3-1.fna&oh=00_AfCfntNa1n4Lj4pKWgs3zpb5fh_NpIIx5DA46_qjZdKthQ&oe=651DD115",
+    "../assets/images/profile.jpeg",
   age: 24,
   location: "Oslo, Norway",
-  currentOccupation: "Student, Software developer, & Game designer",
+  currentOccupation: "Student, Software & Web developer, & Game designer",
   hobbies: [
     "Video Games",
     "Photography",
@@ -99,16 +100,23 @@ const About: React.FC = () => {
   return (
     <view>
       <div style={{display: "flex"}}>
-        <section style={{flex: 2, padding: 20 }}>
+        <section style={{padding: 20 }}>
+          <section style={{display: "flex", flexDirection: "row", justifyContent: "space-around", alignContent: "center" }}>
           <BioBox />
+         <ShowreelVideo />
+          </section>
+          
+          <Education />
+          <Languages />
+          <Tools />
+
+          {/* <img src={require(Victor.profileImg)} alt="victor-pic" /> */}
+          
+          
         </section>
 
         <section style={{ display: "flex", flex: 2, justifyContent: "center" }}>
-          <img
-            style={{ width: "70%", objectFit: "cover", borderRadius: 400, padding: 20 }}
-            src={Victor.profileImg}
-            alt=""
-          />
+          
         </section>
       </div>
     </view>
@@ -134,7 +142,7 @@ const Education = () => {
           display: "flex",
           flexDirection: "row",
           flexWrap: "wrap",
-          justifyContent: "space-between",
+          justifyContent: "space-evenly",
           padding: 10,
         }}
       >
@@ -204,6 +212,15 @@ const EduBox = (props: {
     </div>
   );
 };
+
+const ShowreelVideo = () => {
+  return (
+    <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: 10}}>
+          <h1>Showreel</h1>
+            <VideoPlayer/>
+          </div>
+  );
+}
 
 /// styles
 const Styles = {
