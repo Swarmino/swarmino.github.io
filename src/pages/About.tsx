@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Colors from "../Styles/StyleSheet";
 import VideoPlayer from "../components/VideoPlayer";
+import Background from "../Assets/background";
 
 // data
 let Victor = {
@@ -99,25 +100,22 @@ let Bio = {
 const About: React.FC = () => {
   return (
     <view>
-      <div style={{display: "flex"}}>
-        <section style={{padding: 20 }}>
-          <section style={{display: "flex", flexDirection: "row", justifyContent: "space-around", alignContent: "center" }}>
+      
+      <div className="absolute top-0 left-0 w-screen h-screen -z-10">
+        <Background/>
+      </div>
+
+      <div className="flex flex-row p-5 z-10">
+      
+        <section className="flex lg:flex-row items-center sm:flex-col">
           <BioBox />
          <ShowreelVideo />
-          </section>
-          
+         </section>
+         
           <Education />
           <Languages />
           <Tools />
 
-          {/* <img src={require(Victor.profileImg)} alt="victor-pic" /> */}
-          
-          
-        </section>
-
-        <section style={{ display: "flex", flex: 2, justifyContent: "center" }}>
-          
-        </section>
       </div>
     </view>
   );
@@ -126,9 +124,9 @@ const About: React.FC = () => {
 /// page components
 const BioBox = () => {
   return (
-    <div style={{ padding: 10 }}>
-      <h2>About Me</h2>
-      <p>{Bio.text}</p>
+    <div className=" bg-secondary p-3 rounded-md shadow-lg h-fit">
+      <h2 className="text-xl font-bold">About Me</h2>
+      <p className="">{Bio.text}</p>
     </div>
   );
 };
@@ -136,15 +134,8 @@ const BioBox = () => {
 const Education = () => {
   return (
     <div>
-      <h2>Education</h2>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          justifyContent: "space-evenly",
-          padding: 10,
-        }}
+      <h2 className="text-xl font-bold">Education</h2>
+      <div className="flex flex-row flex-wrap justify-around"
       >
         {Degrees.map((degree, i) => (
           <EduBox
@@ -161,9 +152,9 @@ const Education = () => {
 
 const Languages = () => {
   return (
-    <div>
+    <div className="flex flex-row">
       <h3>Frameworks and Languages</h3>
-      <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
+      <div className="flex bg-background p-2 rounded-md">
         {Victor.codingLanguages.map((language, i) => (
           <Pill key={i} text={language} color="blue" />
         ))}
@@ -176,7 +167,7 @@ const Tools = () => {
   return (
     <div>
       <h3>Tools</h3>
-      <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
+      <div>
         {Victor.tools.map((tool, i) => (
           <Pill key={i} text={tool} color="red" />
         ))}
@@ -187,7 +178,7 @@ const Tools = () => {
 
 const Pill = (props: { text: string; color: string }) => {
   return (
-    <div style={{ ...Styles.pill, backgroundColor: props.color }}>
+    <div className=" bg-accent rounded-full w-fit h-5 p-2 text-sm align-middle">
       {props.text}
     </div>
   );
@@ -200,13 +191,14 @@ const EduBox = (props: {
   endYear: number;
 }) => {
   return (
-    <div style={Styles.eduBox}>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+    <div>
+      
+      <div>
         <FontAwesomeIcon style={{ height: 30 }} icon={faUniversity} />
       </div>
-      <p style={{ textAlign: "center" }}>{props.degreeName}</p>
-      <p style={{ textAlign: "center" }}>{props.school}</p>
-      <p style={{ textAlign: "center" }}>
+      <p className="text-center">{props.degreeName}</p>
+      <p className="text-center">{props.school}</p>
+      <p className="text-center">
         {props.startYear} - {props.endYear}
       </p>
     </div>
@@ -215,35 +207,10 @@ const EduBox = (props: {
 
 const ShowreelVideo = () => {
   return (
-    <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: 10}}>
-          <h1>Showreel</h1>
+    <div className="flex flex-2 p-2">
             <VideoPlayer/>
           </div>
   );
 }
-
-/// styles
-const Styles = {
-  rectangle: {
-    zindex: 0,
-    background:
-      "linear-gradient(270deg, rgba(0,212,255,0) 91%, rgba(40,44,52,1) 96%, rgba(40,44,52,1) 100%)",
-  },
-  pill: {
-    backgroundColor: "purple",
-    color: "white",
-    padding: 10,
-    margin: 5,
-    borderRadius: 20,
-  },
-  eduBox: {
-    backgroundColor: Colors.primary,
-    justifyContent: "center",
-    aligntItems: "center",
-    borderRadius: 10,
-    padding: 10,
-    width: 200,
-  },
-};
 
 export default About;
