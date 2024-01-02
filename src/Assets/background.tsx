@@ -3,13 +3,14 @@ import React, { useEffect, useRef, useState } from 'react';
 const Background: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const numLines = 100; // Choose the amount of lines here
-    const lineSize = 1000; // Adjust the size of lines here
-    const lineColor = ''; // Adjust the color of lines here
+    const lineSize = 2000; // Adjust the size of lines here
+    const lineColor = 'white'; // Adjust the color of lines here
     const [controlPointXOffset, setControlPointXOffset] = useState(100); // Adjust the x offset of control points here
-    const [controlPointYOffset, setControlPointYOffset] = useState(100); // Adjust the y offset of control points here
+    const [controlPointYOffset, setControlPointYOffset] = useState(0); // Adjust the y offset of control points here
     const [fadeOut, setFadeOut] = useState(false); // Flag to indicate fading out
     const [curvature, setCurvature] = useState(0.2); // Adjust the curvature of lines here
-    const [speed, setSpeed] = useState(0.0001); // Adjust the speed of the animation here
+    const [speed, setSpeed] = useState(1); // Adjust the speed of the animation here
+    const [delay, setDelay] = useState(0.01); // Adjust the delay between lines here
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -51,6 +52,8 @@ const Background: React.FC = () => {
                 context.strokeStyle = lineColor;
                 context.globalAlpha = fadeOut ? 1 - t : t; // Adjust the alpha value for fading
                 context.stroke();
+
+                t += delay; // Add delay between lines
             }
 
             t += fadeOut ? -speed : speed; // Adjust the speed of the animation here
