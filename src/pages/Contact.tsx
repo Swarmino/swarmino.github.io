@@ -5,7 +5,7 @@ const Contact: React.FC = () => {
     <section id="contact">
       <h2>Contact Me</h2>
       <p>
-        You can reach me at <a href="mailto:youremail@example.com">youremail@example.com</a>.
+        You can reach me at <a href="mailto:contact@victorfn.com">contact@victorfn.com</a>.
       </p>
       {/* Add social media or contact form here */}
     </section>

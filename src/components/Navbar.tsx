@@ -8,12 +8,12 @@ const NavBar: React.FC = () => {
         <li style={Styles.li}>
           <Link style={Styles.a} to="/">About</Link>
         </li>
-        {/* <li style={Styles.li}>
+        <li style={Styles.li}>
           <Link style={Styles.a} to="/projects">Projects</Link>
         </li>
         <li style={Styles.li}>
           <Link style={Styles.a} to="/contact">Contact</Link>
-        </li> */}
+        </li>
       </ul>
     </nav>
   );
