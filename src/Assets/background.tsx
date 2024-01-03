@@ -3,13 +3,13 @@ import React, { useEffect, useRef, useState } from 'react';
 const Background: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const numLines = 100; // Choose the amount of lines here
-    const lineSize = 2000; // Adjust the size of lines here
-    const lineColor = 'white'; // Adjust the color of lines here
+    const lineSize = 1000; // Adjust the size of lines here
+    const lineColor = 'purple'; // Adjust the color of lines here
     const [controlPointXOffset, setControlPointXOffset] = useState(100); // Adjust the x offset of control points here
     const [controlPointYOffset, setControlPointYOffset] = useState(0); // Adjust the y offset of control points here
     const [fadeOut, setFadeOut] = useState(false); // Flag to indicate fading out
-    const [curvature, setCurvature] = useState(0.2); // Adjust the curvature of lines here
-    const [speed, setSpeed] = useState(1); // Adjust the speed of the animation here
+    const [curvature, setCurvature] = useState(0.1); // Adjust the curvature of lines here
+    const [speed, setSpeed] = useState(0.1); // Adjust the speed of the animation here
     const [delay, setDelay] = useState(0.01); // Adjust the delay between lines here
 
     useEffect(() => {
@@ -33,43 +33,48 @@ const Background: React.FC = () => {
 
         const draw = () => {
             context.clearRect(0, 0, canvas.width, canvas.height);
-
+        
             // Draw lines along bezier curve
             for (let i = 0; i < numLines; i++) {
                 const lineX = bezierCurveX(t, i, numLines, canvas.width);
                 let lineY = bezierCurveY(t, i, numLines, canvas.height);
-
+        
                 // Move lines down the screen
                 lineY += t * canvas.height;
-
+        
                 context.beginPath();
                 context.moveTo(lineX, lineY);
                 context.bezierCurveTo(
                     lineX + lineSize / 2, lineY + lineSize / 2,
                     lineX + lineSize / 2, lineY - lineSize / 2,
                     lineX + lineSize, lineY + lineSize
-                ); // Use bezierCurveTo to create curvy lines
+                );
                 context.strokeStyle = lineColor;
-                context.globalAlpha = fadeOut ? 1 - t : t; // Adjust the alpha value for fading
+                context.globalAlpha = fadeOut ? 1 - t : t;
                 context.stroke();
-
+        
                 t += delay; // Add delay between lines
             }
-
-            t += fadeOut ? -speed : speed; // Adjust the speed of the animation here
-
+        
+            if (!fadeOut) {
+                t += speed * delay; // Adjust the speed of the animation here
+            } else {
+                t -= speed * delay; // Adjust the speed of the animation here
+            }
+        
             if (t > 1) {
-                t = 0; // Reset time to seamlessly animate from left to right
+                t = 0;
                 setFadeOut(false);
             } else if (t < 0) {
-                t = 1; // Reset time to seamlessly animate from left to right
+                t = 1;
                 setFadeOut(true);
             }
-
+        
             requestAnimationFrame(draw);
         };
-
+        
         draw();
+        
 
         return () => {
             window.removeEventListener('resize', resizeCanvas);
