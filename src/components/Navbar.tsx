@@ -1,49 +1,83 @@
-import React from 'react';
+import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <nav style={Styles.nav}>
-      <ul style={Styles.ul}>
-        <li style={Styles.li}>
-          <Link style={Styles.a} to="/">About</Link>
+    <nav className="rounded-lg justify-center w-screen bg-black z-50">
+      {/* Mobile Menu */}
+      <div className="md:hidden fixed z-50 ">
+        {!isMobileMenuOpen && (
+          <button className="text-white p-2" onClick={toggleMobileMenu}>
+            <FontAwesomeIcon style={{ height: 30 }} icon={faBars} className=' bg-muted p-6 rounded-full' />
+          </button>
+        )}
+        <ul
+          className={`${
+            isMobileMenuOpen ? 'opacity-100' : 'opacity-0'
+          } transition-opacity duration-500 ease-in-out bg-black/75 p-2 text-left h-screen w-fit text-4xl absolute top-0 left-0`}
+        >
+          <button className="text-white no-underline" onClick={toggleMobileMenu}>
+            <FontAwesomeIcon style={{ height: 30 }} icon={faX} className='p-2' />
+            </button>
+          <li className="hover:text-primary">
+            
+          </li>
+          <li className="hover:text-primary">
+            <Link className="text-white no-underline" to="/">
+              //Home
+            </Link>
+          </li>
+          <li className="hover:text-primary">
+            <Link className="text-white no-underline" to="/about">
+              //About
+            </Link>
+          </li>
+          <li className="hover:text-primary">
+            <Link className="text-white no-underline" to="/projects">
+              //Projects
+            </Link>
+          </li>
+          <li className="hover:text-primary">
+            <Link className="text-white no-underline" to="/contact">
+              //Contact
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+      {/* Desktop Menu */}
+      <ul className="hidden md:flex bg-gray-800">
+        <li className="mr-4">
+          <Link className="text-white no-underline hover:text-primary" to="/">
+            Home
+          </Link>
         </li>
-        <li style={Styles.li}>
-          <Link style={Styles.a} to="/projects">Projects</Link>
+        <li className="mr-4">
+          <Link className="text-white no-underline hover:text-primary" to="/about">
+            About
+          </Link>
         </li>
-        <li style={Styles.li}>
-          <Link style={Styles.a} to="/contact">Contact</Link>
+        <li className="mr-4">
+          <Link className="text-white no-underline hover:text-primary" to="/projects">
+            Projects
+          </Link>
+        </li>
+        <li className="mr-4">
+          <Link className="text-white no-underline hover:text-primary" to="/contact">
+            Contact
+          </Link>
         </li>
       </ul>
     </nav>
   );
-};
-
-const Styles = {
-  nav: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: '#333',
-    color: '#fff', 
-    zIndex: 9999
-  },
-  ul: {
-    display: 'flex',
-    listStyle: 'none'
-  },
-  li: {
-    marginLeft: '2rem'
-  },
-  a: {
-    color: '#fff',
-    textDecoration: 'none'
-  },
-  img: {
-    width: '50px',
-    marginLeft: '2rem'
-  }
 };
 
 export default NavBar;

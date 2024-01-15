@@ -230,9 +230,10 @@ const About: React.FC = () => {
 
       <div className="flex flex-col p-5 z-10">
 
-        <section className="flex lg:flex-row items-center sm:flex-col">
+        <section className="flex items-center flex-col text-sm
+        lg:flex-row ">
           <BioBox />
-          <ShowreelVideo />
+          
         </section>
 
         <section>
@@ -261,7 +262,7 @@ const Education = () => {
   return (
     <div>
       <h2 className="text-xl font-bold">Education</h2>
-      <div className="flex lg:flex-col sm:flex-row justify-around items-center space-y-2 "
+      <div className="flex flex-col md:flex-row justify-around items-center space-y-2 "
       >
         {Degrees.map((degree, i) => (
           <EduBox
@@ -355,7 +356,7 @@ const EduBox = (props: {
 
 const ShowreelVideo = () => {
   return (
-    <div className="flex flex-2 p-2">
+    <div className="flex justify-center">
       <VideoPlayer />
     </div>
   );

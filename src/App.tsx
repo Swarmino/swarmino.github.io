@@ -5,6 +5,8 @@ import Contact from './pages/Contact';
 import Egg from './pages/Egg';
 import About from './pages/About';
 import NavBar from './components/Navbar';
+import Home from './pages/Home';
+import BentoBoxPage from './pages/Bento';
 
 function App() {
   return (
@@ -12,7 +14,8 @@ function App() {
       <div className="App">
         <NavBar/>
         <Routes>
-          <Route path="/" element={<About />} />
+          <Route path="/" element={<BentoBoxPage />} />
+          <Route path="/about" element={<About/>} />
           <Route path="/projects" element={<Projects/>} />
           <Route path="/contact" element={<Contact/>} />
           <Route path="/egg" element={<Egg/>} />
