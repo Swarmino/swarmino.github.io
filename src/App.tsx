@@ -1,13 +1,21 @@
 import './App.css'
+import AppRouter from './routes/router'
 
 function App() {
 
   return (
     <>
-      <h1> Currently under construction</h1>
-      <h3>Please check back later</h3>
-      <span className="loading loading-infinity loading-lg"></span>
+      <AppRouter />
     </>
+
+    /*     <>
+          <div>
+            <h1> Currently under construction</h1>
+            <h3>Please check back later</h3>
+            <span className="loading loading-infinity loading-lg"></span>
+          </div>
+          <footer className='flex justify-start text-'>&copy; Victor Falck-Næss</footer>
+        </> */
   )
 }
 
