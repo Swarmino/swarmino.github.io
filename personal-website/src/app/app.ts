@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ProceduralBgComponent } from "./procedural-bg/procedural-bg";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ProceduralBgComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
