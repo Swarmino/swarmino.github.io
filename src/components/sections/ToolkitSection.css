@@ -1,0 +1,57 @@
+.toolkit {
+  background: var(--paper-deep);
+}
+
+.toolkit > h2 {
+  margin-top: 62px;
+}
+
+.toolkit-list {
+  margin-top: 74px;
+  border-top: 1px solid var(--ink);
+}
+
+.toolkit-row {
+  display: grid;
+  grid-template-columns: 80px minmax(180px, 0.6fr) 1.4fr;
+  gap: 30px;
+  align-items: baseline;
+  padding: clamp(28px, 4vw, 55px) 0;
+  border-bottom: 1px solid var(--ink);
+}
+
+.toolkit-row > span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.toolkit-row h3 {
+  margin: 0;
+  color: var(--violet);
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 6vw, 6rem);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.toolkit-row p {
+  max-width: 570px;
+  margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  .toolkit-list {
+    margin-top: 50px;
+  }
+
+  .toolkit-row {
+    grid-template-columns: 42px 1fr;
+    gap: 12px;
+  }
+
+  .toolkit-row p {
+    grid-column: 2;
+  }
+}
