@@ -1,0 +1,23 @@
+<div class="ticker">
+  <p class="visually-hidden">Developer, designer and product thinker</p>
+  <button
+    class="ticker-control"
+    type="button"
+    [attr.aria-pressed]="isPaused()"
+    (click)="toggleMotion()"
+  >
+    @if (isPaused()) {
+      Play motion
+    } @else {
+      Pause motion
+    }
+  </button>
+  <div class="ticker-track" [class.is-paused]="isPaused()" aria-hidden="true">
+    @for (item of tickerItems; track $index) {
+      <span class="ticker-item">
+        <span>{{ item }}</span>
+        <i>✦</i>
+      </span>
+    }
+  </div>
+</div>

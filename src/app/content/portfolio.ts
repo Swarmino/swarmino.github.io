@@ -4,17 +4,17 @@ export const siteLinks = {
   itch: 'https://swarmino.itch.io/',
   linkedin: 'https://www.linkedin.com/in/victorfn/',
   showreel: 'https://youtu.be/-XIfHc0to2s',
-} as const
+} as const;
 
 type Discipline = Readonly<{
-  description: string
-  href: string
-  id: string
-  index: string
-  label: string
-  title: string
-  tools: string
-}>
+  description: string;
+  href: string;
+  id: string;
+  index: string;
+  label: string;
+  title: string;
+  tools: string;
+}>;
 
 export const disciplines = [
   {
@@ -23,7 +23,7 @@ export const disciplines = [
     title: 'Front-end & UI',
     description:
       'Interfaces with a strong visual point of view, thoughtful interaction and maintainable systems behind them.',
-    tools: 'React · Next.js · TypeScript · Figma',
+    tools: 'Angular · React · Next.js · TypeScript · Figma',
     href: siteLinks.github,
     label: 'Explore code',
   },
@@ -47,13 +47,13 @@ export const disciplines = [
     href: siteLinks.itch,
     label: 'Play the work',
   },
-] satisfies readonly Discipline[]
+] satisfies readonly Discipline[];
 
 type ToolkitItem = Readonly<{
-  description: string
-  id: string
-  title: string
-}>
+  description: string;
+  id: string;
+  title: string;
+}>;
 
 export const toolkit = [
   {
@@ -64,23 +64,23 @@ export const toolkit = [
   {
     id: '02',
     title: 'Build',
-    description: 'React, Next.js, TypeScript, SwiftUI, Kotlin, C#',
+    description: 'Angular, React, Next.js, TypeScript, SwiftUI, Kotlin, C#',
   },
   {
     id: '03',
     title: 'Lead',
     description: 'Product thinking, collaboration, critique, team process',
   },
-] satisfies readonly ToolkitItem[]
+] satisfies readonly ToolkitItem[];
 
 export const facts = [
   { label: 'Current focus', value: 'Front-end & UI leadership' },
   { label: 'Education', value: "Two bachelor's degrees" },
   { label: 'Perspective', value: 'Design + engineering' },
-] as const
+] as const;
 
 export const socialLinks = [
   { href: siteLinks.linkedin, label: 'LinkedIn', shortLabel: 'in' },
   { href: siteLinks.github, label: 'GitHub', shortLabel: 'gh' },
   { href: siteLinks.showreel, label: 'YouTube', shortLabel: 'yt' },
-] as const
+] as const;

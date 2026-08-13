@@ -1,0 +1,27 @@
+<section class="about section-wrap" id="about" aria-labelledby="about-title">
+  <app-section-marker index="01">About</app-section-marker>
+  <div class="about-grid">
+    <h2 class="display-heading" id="about-title">
+      Logic in the bones.<br /><em>Feeling</em> on the surface.
+    </h2>
+    <div class="about-copy">
+      <p>
+        My work lives in the space between design and engineering. I care about how an experience
+        looks, how it behaves, and whether the system behind it helps the next person do their best
+        work.
+      </p>
+      <p>
+        With backgrounds in game design and front-end & mobile development, I bring a
+        multidisciplinary eye to product teams—from the first sketch to production code.
+      </p>
+      <dl class="facts">
+        @for (fact of facts; track fact.label) {
+          <div>
+            <dt>{{ fact.label }}</dt>
+            <dd>{{ fact.value }}</dd>
+          </div>
+        }
+      </dl>
+    </div>
+  </div>
+</section>
