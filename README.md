@@ -1,6 +1,6 @@
 # Victor Falck-Næss — portfolio
 
-Source for [victorfn.com](https://victorfn.com), a static portfolio built with React, TypeScript, and Vite.
+Source for [victorfn.com](https://victorfn.com), a static portfolio built with Angular and TypeScript.
 
 ## Local development
 
@@ -17,16 +17,18 @@ npm run dev
 npm run check
 ```
 
-The check command runs linting, component tests, strict TypeScript compilation, and a production build.
+The check command runs linting, Angular component tests, strict template and TypeScript compilation, and a production build.
 
 ## Architecture
 
-- `src/content` contains the portfolio's typed content and external links.
-- `src/components/layout` contains site-wide layout components.
-- `src/components/sections` contains one component per page section.
-- `src/components/shared` contains reusable presentation primitives.
+- `src/app/content` contains the portfolio's typed content and external links.
+- `src/app/layout` contains site-wide layout components.
+- `src/app/sections` contains one standalone Angular component per page section.
+- `src/app/shared` contains reusable presentation components.
 - `src/styles` contains the global design foundation; section styles are colocated with their components.
+
+Every component uses `OnPush` change detection, and the only interactive local state—the ticker control—is represented by an Angular signal.
 
 ## Deployment
 
-Pull requests run the full quality suite. Merges to `main` build `dist` and deploy it through GitHub's official Pages actions. Generated build output is not committed.
+Pull requests run the full quality suite. Merges to `main` build the Angular application and deploy `dist/victor-portfolio/browser` through GitHub's official Pages actions. Generated build output is not committed.

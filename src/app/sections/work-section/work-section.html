@@ -1,0 +1,43 @@
+<section class="work section-wrap" id="work" aria-labelledby="work-title">
+  <app-section-marker index="02" tone="light">Selected disciplines</app-section-marker>
+  <div class="work-heading">
+    <h2 class="display-heading display-heading-light" id="work-title">
+      One practice.<br />Many mediums.
+    </h2>
+    <p>I move comfortably from direction to detail, keeping the whole experience in view.</p>
+  </div>
+  <div class="project-grid">
+    @for (discipline of disciplines; track discipline.id) {
+      <a
+        class="project-card"
+        [href]="discipline.href"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="card-topline">
+          <span>{{ discipline.index }}</span>
+          <span class="card-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div>
+          <h3>{{ discipline.title }}</h3>
+          <p>{{ discipline.description }}</p>
+        </div>
+        <div class="card-footer">
+          <span>{{ discipline.tools }}</span>
+          <strong>{{ discipline.label }}</strong>
+        </div>
+      </a>
+    }
+  </div>
+  <nav class="work-links" aria-label="More work">
+    <a [href]="siteLinks.github" target="_blank" rel="noopener noreferrer">
+      GitHub <span aria-hidden="true">↗</span>
+    </a>
+    <a [href]="siteLinks.showreel" target="_blank" rel="noopener noreferrer">
+      Showreel <span aria-hidden="true">↗</span>
+    </a>
+    <a [href]="siteLinks.itch" target="_blank" rel="noopener noreferrer">
+      Itch.io <span aria-hidden="true">↗</span>
+    </a>
+  </nav>
+</section>

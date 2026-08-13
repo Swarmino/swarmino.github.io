@@ -1,0 +1,9 @@
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+@Component({
+  selector: 'app-hero-section',
+  templateUrl: './hero-section.html',
+  styleUrl: './hero-section.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class HeroSection {}

@@ -1,0 +1,8 @@
+<div
+  class="section-marker"
+  [class.section-marker-light]="tone() === 'light'"
+  aria-hidden="true"
+>
+  <span>{{ index() }}</span>
+  <span><ng-content /></span>
+</div>

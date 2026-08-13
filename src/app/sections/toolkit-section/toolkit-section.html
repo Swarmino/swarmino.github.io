@@ -1,0 +1,13 @@
+<section class="toolkit section-wrap" aria-labelledby="toolkit-title">
+  <app-section-marker index="03">Toolkit</app-section-marker>
+  <h2 class="display-heading" id="toolkit-title">How I shape<br />the work.</h2>
+  <div class="toolkit-list">
+    @for (item of toolkit; track item.id) {
+      <article class="toolkit-row">
+        <span aria-hidden="true">{{ item.id }}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </article>
+    }
+  </div>
+</section>

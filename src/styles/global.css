@@ -41,8 +41,21 @@ body::before {
   mix-blend-mode: multiply;
 }
 
-#root {
+app-root {
+  display: block;
   min-height: 100vh;
+}
+
+app-site-header,
+app-hero-section,
+app-ticker,
+app-about-section,
+app-wave-break,
+app-work-section,
+app-toolkit-section,
+app-contact-section,
+app-section-marker {
+  display: block;
 }
 
 a {

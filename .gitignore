@@ -16,6 +16,7 @@ jspm_packages/
 # Distribution directories
 dist/
 coverage/
+.angular/
 
 # Typescript v1 declaration files
 typings/
