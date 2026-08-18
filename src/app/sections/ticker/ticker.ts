@@ -1,6 +1,13 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 
-const TICKER_ITEMS = ['Developer', 'Designer', 'Product thinker'] as const;
+const TICKER_ITEMS = [
+  'Full-stack developer',
+  'Frontend & systems',
+  'Designer',
+  'Team lead',
+  'Game designer',
+  'Technology enthusiast',
+] as const;
 
 @Component({
   selector: 'app-ticker',
