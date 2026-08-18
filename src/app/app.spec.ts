@@ -27,14 +27,14 @@ describe('Portfolio application', () => {
       heading.textContent?.replace(/\s+/g, ' ').trim(),
     );
     expect(sectionHeadings).toEqual([
-      'Logic in the bones.Feeling on the surface.',
-      'One practice.Many mediums.',
-      'How I shapethe work.',
-      'Have an ideawith energy?',
+      'Technical depth.Design instinct.Product focus.',
+      'Web, mobile,and interactive products.',
+      'How I createvalue.',
+      'Have a productworth building?',
     ]);
 
     const contactLink = [...page.querySelectorAll<HTMLAnchorElement>('a')].find((link) =>
-      link.textContent?.includes('Start a conversation'),
+      link.textContent?.includes('Talk about a role or project'),
     );
     expect(contactLink?.getAttribute('href')).toBe('mailto:contact@victorfn.com');
   });
@@ -47,9 +47,9 @@ describe('Portfolio application', () => {
     );
 
     expect(disciplineHeadings).toEqual([
-      'Front-end & UI',
+      'Frontend & systems',
       'Mobile products',
-      'Games & interaction',
+      'Game design & interaction',
     ]);
 
     const externalLinks = page.querySelectorAll<HTMLAnchorElement>('a[target="_blank"]');

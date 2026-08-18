@@ -20,19 +20,19 @@ export const disciplines = [
   {
     id: 'front-end-ui',
     index: '01',
-    title: 'Front-end & UI',
+    title: 'Frontend & systems',
     description:
-      'Interfaces with a strong visual point of view, thoughtful interaction and maintainable systems behind them.',
+      'Designing and building interfaces that feel considered, perform reliably, and remain maintainable as the product evolves.',
     tools: 'Angular · React · Next.js · TypeScript · Figma',
     href: siteLinks.github,
-    label: 'Explore code',
+    label: 'View code',
   },
   {
     id: 'mobile-products',
     index: '02',
     title: 'Mobile products',
     description:
-      'Native and cross-platform experiences shaped around the device, the context and the person holding it.',
+      'Native and cross-platform experiences shaped around the device, the context, and the person using them.',
     tools: 'SwiftUI · Kotlin · React Native',
     href: siteLinks.github,
     label: 'See projects',
@@ -40,9 +40,9 @@ export const disciplines = [
   {
     id: 'games-interaction',
     index: '03',
-    title: 'Games & interaction',
+    title: 'Game design & interaction',
     description:
-      'Playful systems, rapid prototypes and digital worlds where code, art direction and feel meet.',
+      'Designing systems, prototypes, and interactive experiences where rules, feedback, and emotion work together.',
     tools: 'Unity · C# · Godot · Unreal',
     href: siteLinks.itch,
     label: 'Play the work',
@@ -59,24 +59,27 @@ export const toolkit = [
   {
     id: '01',
     title: 'Design',
-    description: 'UI direction, prototyping, design systems, accessibility',
+    description:
+      'Turn goals and constraints into clear flows, useful prototypes, and interfaces with a distinct point of view.',
   },
   {
     id: '02',
     title: 'Build',
-    description: 'Angular, React, Next.js, TypeScript, SwiftUI, Kotlin, C#',
+    description:
+      'Ship reliable, maintainable products across Angular, React, Next.js, TypeScript, mobile, and interactive technologies.',
   },
   {
     id: '03',
     title: 'Lead',
-    description: 'Product thinking, collaboration, critique, team process',
+    description:
+      'Create alignment across design, product, and engineering—and help teams make better decisions with momentum.',
   },
 ] satisfies readonly ToolkitItem[];
 
 export const facts = [
   { label: 'Current focus', value: 'Front-end & UI leadership' },
-  { label: 'Education', value: "Two bachelor's degrees" },
-  { label: 'Perspective', value: 'Design + engineering' },
+  { label: 'Background', value: 'Full-stack development, mobile products & game design' },
+  { label: 'Based in', value: 'Oslo, Norway' },
 ] as const;
 
 export const socialLinks = [
